@@ -1,5 +1,7 @@
 const header = document.querySelector('header.header-news');
+
 const carouselItemCount = 4;
+
 fetch('http://localhost:3000/news.json')
   .then((serverResponse) => serverResponse.text())
   .then((responseText) => {
@@ -20,3 +22,18 @@ function createDivForNews(newsContents) {
   newsArticle.innerText = newsContents.title;
   return newsArticle;
 }
+
+//H O M E W O R K     0 1 - Generování polí symbolizujících dny v měsíci do hlavního obsahu aplikace
+
+const mainContent = document.querySelector('section.main-content');
+
+function createMonthDiv() {
+  for (let i = 1; i <= 31; i++) {
+    const day = document.createElement('div');
+    day.innerText = [i];
+    mainContent.appendChild(day);
+    day.classList.add('day');
+  }
+}
+
+createMonthDiv();
