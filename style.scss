@@ -15,7 +15,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 header.header-news {
@@ -37,18 +37,13 @@ section.main-content {
 .main-content .day {
   aspect-ratio: 1/1;
   width: calc(100% / 7 - 2rem);
-  display: flex;
-  /* k zarovnani obsahu na stred */
+  display: flex; /* k zarovnani obsahu na stred */
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  /*okraj */
-  border-radius: 0.5rem;
-  /* zaobleni rohu */
-  cursor: pointer;
-  /* kurzor */
-  transition: 0.5s;
-  /* casovy udaj pro animovani prechodu zmen css */
+  border: 1px solid rgba(0, 0, 0, 0.3); /*okraj */
+  border-radius: 0.5rem; /* zaobleni rohu */
+  cursor: pointer; /* kurzor */
+  transition: 0.5s; /* casovy udaj pro animovani prechodu zmen css */
 }
 
 .main-content .day:hover {
@@ -56,16 +51,18 @@ section.main-content {
 }
 
 header.header-news {
+  & > button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    opacity: 0.5;
+    &.last {
+      right: 0;
+    }
+  }
+  & > div.header-news__container {
+    display: flex;
+  }
   position: relative;
   min-height: 18rem;
 }
-header.header-news > button {
-  position: absolute;
-  top: 0;
-  height: 100%;
-}
-header.header-news > div.header-news__container {
-  display: flex;
-}
-
-/*# sourceMappingURL=style.css.map */
